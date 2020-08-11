@@ -1,0 +1,64 @@
+{% load static %}
+<html xmlns="http://www.w3.org/1999/html"  lang="en">
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>Login </title>
+
+    <link rel="stylesheet"  href="{% static 'css/reset.css'%}" media="screen" type="text/css"/>
+
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" media="screen" type="text/css" />
+    
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" type="text/css"/>
+
+
+
+</head>
+<body>
+<form action="{% url 'login' %}" method="POST"  class="form-control">
+    {% csrf_token %}
+  <div class="wrap">
+		<div class="avatar">
+      <img src="{% static 'avatar.png'%}" alt="avatar.png">
+		</div>
+      <br>
+      <label for="Email">Email</label><br><br>
+      <input placeholder="Email" id="Email" name="email" type="email" value="" required>
+		<div class="bar">
+			<i></i>
+		</div>
+      <br>
+      <div class="container">
+      <label for="Password">Password</label><br><br>
+          <input name="password" type="password" id="Password" placeholder="Password" value="secret" required>
+          <i class="fa fa-eye" id="eye"></i>
+       <a href="{% url 'ForgotPassword' %}" class="forgot_link">forgot ?</a>
+      </div>
+      <div class="role" >
+      <label for="Role" class="floatLabel">Role</label>
+          <br><br>
+          <select value="Role" name="Role" >
+              <option value="admin" id="admin" > admin</option>
+              <option value="Teacher" id="Teacher">Teacher</option>
+              <option value="Student" id="Student" >Student</option>
+          </select>
+      </label>
+      <br><br>
+      <button type="submit" value="submit" ><a style="text-decoration:none"  href="login"> Sign in </a></button>
+      <br><br><br><br><br>
+       <button type="button" value="submit" id="subtn" > <a style="text-decoration:none" href="signup"> Sign up  </a> </button>
+  </div>
+  </div>
+</form>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script src="{% static 'js/index.js'%}"></script>
+
+
+
+</body>
+
+
+</html>

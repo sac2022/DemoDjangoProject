@@ -1,0 +1,58 @@
+
+{% load static %}
+<html LANG="en">
+ <link rel="stylesheet" href="{% static 'css/signupstyle.css'%}" type="text/css" />
+
+<body>
+
+<form name="logout" action="{% url 'Confirmation' %}" method="POST" >
+    {% csrf_token %}
+  <h2>Sign Up</h2>
+		<p>
+			<label for="Email" class="floatLabel" style="
+    width: 68px;
+    right: 207px;">Email</label>
+			<input id="Email" name="email" type="email" style="
+    width: 402px;
+    border-top-width: 1px;
+    border-bottom-width: 1px;
+    border-left-width: 1px;
+    border-right-width: 1px;
+    padding: 12px 8px;" required >
+		</p>
+        <p>
+            <label for="FirstName" class="floatLabel">First Name</label>
+            <input id="FirstName" name="FirstName" type="text">
+        </p>
+        <p>
+            <label for="LastName" class="floatLabel">Last Name</label>
+            <input id="LastName" name="LastName" type="text">
+        </p>
+        <p>
+			<label for="Password" class="floatLabel" style="
+    width: 68px;">Password</label>
+			<input id="Password" name="password" type="password" required>
+			<span>Enter a password longer than 8 characters</span>
+		</p>
+		<p>
+			<label for="confirm_password" class="floatLabel">Confirm Password</label>
+			<input id="confirm_password" name="confirm_password" type="password" required>
+			<span>Your passwords do not match</span>
+		</p>
+        <p style="height: 2px;">
+            <label for="Role" class="floatLabel" style="width: 114px">Role:</label>
+        </p>
+        <p>
+        <select  id="Role" value="Role" name="Role"  style="width: 102px" >
+            <option value="admin" id="admin" > admin</option>
+            <option value="Teacher" id="Teacher">Teacher</option>
+            <option value="Student" id="Student" >Student</option>
+        </select>
+        </p>
+         <input type="submit" value="Create My Account"/>
+</form>
+ <script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+    <script type="text/javascript" src="{% static 'js/signup.js'%}" ></script>
+</body>
+</html>

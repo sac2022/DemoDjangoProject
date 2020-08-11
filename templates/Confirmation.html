@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Thank you </title>
+    <link rel="stylesheet" href="{% static 'css/style.css'%}" type="text/css" media="screen">
+</head>
+<body style="font-family: Calibri,monospace"  >
+<div class="wrap">
+<div style="float: bottom">
+    <p style="font-family: Calibri,sans-serif;text-color: #222222"> Thanks for signing up. </p>
+<form name="back" method="POST" action="{% url 'logout' %}">
+      {% csrf_token %}
+  <label class="logoutLblPos">
+
+      <button name="submit3" type="submit" id="submit3" value="Back"> Home </button>
+  </label>
+</form>
+</div>
+</div>
+<script type="text/JavaScript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+</html>

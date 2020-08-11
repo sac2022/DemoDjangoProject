@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+
+    <title>Login Successfull</title>
+
+
+</head>
+<body bgcolor="aqua">
+
+    <p> Login Succesful </p>
+    <script src="{% static 'js/index.js'%}" ></script>
+
+ <img src="../static/pic_trulli.jpg" alt="Trulli" width="500" height="333">
+    <div style="float:bottom">
+<form  name="logout" method="POST" action="{% url 'logout' %}">
+     {% csrf_token %}
+    <label class="logoutLblPos">
+  <button name="submit2" type="submit" id="submit2" value="log out"> Log out</button>
+  </label>
+</form>
+</div>
+</body>
+</html>
