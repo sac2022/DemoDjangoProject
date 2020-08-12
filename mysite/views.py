@@ -20,11 +20,11 @@ def login(request):
     email = request.POST.get('email')
     password = request.POST.get('password')
     role = request.POST.get('Role')
-    #print(email, password, role)
-    #print("role type", role)
+    # print(email, password, role)
+    # print("role type", role)
     d = sampledb.data()
     agg = d.find_one({'email': email, 'password': password, 'Role': role})
-    #print(agg)
+    # print(agg)
     if agg:
         if role == 'admin':
             return render(request, 'login.html')
@@ -49,14 +49,14 @@ def p_forgot(request):
     confirm_password = request.POST.get('confirm_password')
     d = sampledb.data()
     '''mail = d.find_one({'Email': email})
-    if mail == email:'''#checking with trails
+    if mail == email:'''  # checking with trails
     r = d.find_one_and_update(
         {'email': email}, {
 
             '$set': {'password': password, 'confirm_password': confirm_password}
         }
         , upsert=True)
-    #print(r)
+    # print(r)
 
     return render(request, "ForgotPassword.html")
 
