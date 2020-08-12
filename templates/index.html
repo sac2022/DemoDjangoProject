@@ -23,7 +23,6 @@
 		<div class="avatar">
       <img src="{% static 'avatar.png'%}" alt="avatar.png">
 		</div>
-      <br>
       <label for="Email">Email</label><br><br>
       <input placeholder="Email" id="Email" name="email" type="email" value="" required>
 		<div class="bar">
@@ -38,16 +37,17 @@
       <div class="role" >
       <label for="Role" class="floatLabel">Role</label>
           <br><br>
-          <select value="Role" name="Role" >
-              <option value="admin" id="admin" > admin</option>
-              <option value="Teacher" id="Teacher">Teacher</option>
-              <option value="Student" id="Student" >Student</option>
-          </select>
-      </label>
-      <br><br>
-      <button type="submit" value="submit" ><a style="text-decoration:none"  href="login"> Sign in </a></button>
+          <label>
+              <select value="Role" name="Role" >
+                  <option value="admin" id="admin" > admin</option>
+                  <option value="Teacher" id="Teacher">Teacher</option>
+                  <option value="Student" id="Student" >Student</option>
+              </select>
+          </label>
+          <br><br>
+      <button type="submit" value="submit" ><a style="text-decoration:none"  href="{% url 'login' %}"> Sign in </a></button>
       <br><br><br><br><br>
-       <button type="button" value="submit" id="subtn" > <a style="text-decoration:none" href="signup"> Sign up  </a> </button>
+       <button type="button" value="submit" id="subtn" > <a style="text-decoration:none" href="{% url 'signup' %}"> Sign up  </a> </button>
   </div>
   </div>
 </form>
